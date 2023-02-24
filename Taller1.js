@@ -112,16 +112,16 @@ try {
 
       case "8":
         outro(`
-        • Clase
-        • Atributo o propiedad
-        • Método
-        • Constructores
-        • Polimorfismo
-        • Variables globales
-        • Variables locales
-        • Parámetros actuales
-        • Parámetros formales
-        • Pase de parámetros por valor y por referencia
+        • Clase: plantilla para la creación de objetos.
+        • Atributo o propiedad: variables con características individuales dentro de una clase.
+        • Método: conjunto de instrucciones definidas dentro de una clase (función).
+        • Constructores: método especial para crear e inicializar un objeto creado a partir de una clase.
+        • Polimorfismo: capacidad que tienen los objetos de una clase en ofrecer respuesta distinta e independiente en función de los parámetros (diferentes implementaciones).
+        • Variables globales: aquellas que puede ser usada en toda la clase.
+        • Variables locales: aquellas que sólo pueden ser usadas dentro de la función que se define.
+        • Parámetros actuales: argumentos enviados al momento de ser llamada la función.
+        • Parámetros formales: argumentos recibidos por una función.
+        • Pase de parámetros por valor y por referencia: cuando se pasa una variable por valor, lo que ocurre dentro de la función, se queda en la función. Cuando se pasa una variable por referencia, lo que ocurre dentro de la función repercute fuera de ella.
         `);
         break;
  
@@ -170,124 +170,6 @@ function calcularPromedio(notas = []) {
   return sumaNotas / cantidadNotas;
 }
 // Fin - 2.3// Escribir un programa que solicite un valor entero al usuario y determine si es par o impar.
- 
-function esPar(numero) {
-  if (isNaN(numero)) {
-    throw new Error("El valor digitado no corresponde a un número.");
-  }
-  const tipo = numero % 2 === 0 ? "Par" : "Impar";
- 
-  return "El número " + String(numero) + " es " + tipo + ".";
-}
-// Fin - 1.1
- 
-// Inicio - 3.1
-// Crear una función llamada "suma", que reciba como parámetros dos números enteros y
-// devuelva como resultado otro número entero que sea la suma de ambos.
-// El Callback es una función que se ejecuta dentro de otra función (generalmente JavaScript).
- 
-function sumaNotas(numero1, numero2) {
-  if (isNaN(numero1) || isNaN(numero2)) {
-    throw new Error("El valor digitado no corresponde a un número.");
-  }
-  if (numero2 > 5) {
-    throw new Error("Las notas universitarias no pueden ser mayores a 5.");
-  }
-  return numero1 + numero2;
-}
-// Fin - 3.1
- 
-// Inicio - 2.3
-// Calcular el promedio de un alumno que tiene 7 calificaciones en la materia de Cálculo.
- 
-function calcularPromedio(notas = []) {
-  const cantidadNotas = notas.length;
-  const sumaNotas = notas.reduce(sumaNotas, 0);
-  return sumaNotas / cantidadNotas;
-}
-// Fin - 2.3
- 
-// Inicio - 4.3
-// Dado un arreglo constituido de números enteros, devolver la suma de todos los elementos. En este caso se
-// desconoce el número de elementos. En cualquier caso se garantiza que el último elemento del arreglo es -1,
-// número que no aparecerá en ninguna otra posición.
- 
-function sumaArreglo(arreglo) {
-  let suma = 0;
-  let i = 0;
-  while (arreglo[i] !== -1) {
-    suma += arreglo[i];
-    i++;
-  }
- 
-  return suma - 1;
-}
-// Fin - 4.3
- 
-// Inicio - 5.3
-// Llenar un vector de 20 elementos, imprimir la posición y el valor del elemento mayor
-// almacenado en el vector. Suponga que todos los elementos del vector son diferentes.
- 
-function elementoMayor(tamanio) {
-  if (isNaN(tamanio)) {
-    throw new Error("El valor digitado no corresponde a un número.");
-  }
- 
-  const vector = Array(Number(tamanio))
-    .fill()
-    .map(function numAleatorio(index) {
-      return Math.random();
-    });
- 
-  let index_del_mayor = 0;
- 
-  vector.forEach(function (cantidad_actual, index_actual) {
-    if (cantidad_actual > vector[index_del_mayor]) {
-      index_del_mayor = index_actual;
-    }
-  });
- 
-  return (
-    "El elemento mayor tiene como posición " +
-    index_del_mayor +
-    " y como valor " +
-    vector[index_del_mayor]
-  );
-}
-// Fin - 5.3
- 
-// Inicio - 6.2
-// Pida al usuario que introduzca una frase y cambie los espacios por guiones
-// (por ejemplo: "como estas, Juan" -> "como-estas,-Juan").
- 
-function cambiarEspacios(frase) {
-  if (typeof frase !== "string") {
-    throw new Error("La frase no es un string.");
-  }
- 
-  return frase.replaceAll(" ", "-");
-}
-// Fin - 6.2
- 
-// Inicio - 7.1
-// Pida al usuario que teclee los datos de 10 personas (sólo el nombre y el número de teléfono). Después se deberá
-// mostrar en pantalla los nombres y los teléfonos de aquellas personas cuyo número de teléfono comience por 6.
-// Recordar: cuando la propiedad tiene el mismo nombre de la variable, se pone una sola vez.
-function agregarAlDirectorio(nombre, telefono, directorio) {
-  const persona = {
-    nombre,
-    telefono,
-  };
-  directorio.push(persona);
- 
-  return directorio;
-}
- 
-function filtrarPorUnNumero(numero, directorio) {
-  return directorio.filter(function (persona) {
-    return String(persona.telefono)[0] === String(numero);
-  });
-}
  
 // Inicio - 4.3
 // Dado un arreglo constituido de números enteros, devolver la suma de todos los elementos. En este caso se

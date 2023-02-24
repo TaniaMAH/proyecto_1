@@ -47,7 +47,8 @@ try {
             T(n) = O(n^2)
 
             En cuanto a su función matemática correspondiente, la suma que se utiliza en el algoritmo es la serie de Taylor para la función exponencial evaluada en x = 1. Por lo tanto, podemos escribir la fórmula matemática correspondiente como:
-
+            
+            ** NOTA: Fórmula en LaTex***
             e = \sum_{k=0}^{+\infty}\frac{1}{k!} = \lim_{n \to \infty} \sum_{k=0}^{n}\frac{1}{k!} = e^1
 
             donde el límite representa el valor exacto de e y la suma finita representa la aproximación que obtenemos al calcular un número finito de términos de la serie. En otras palabras, el algoritmo que hemos desarrollado utiliza una aproximación por series de la constante matemática e.`
