@@ -35,6 +35,7 @@ let usuarioPerdido = false;
 let CPUPerdido = false;
 let usuarioGanado = false;
 let CPUGanado = false;
+let empate = false;
 
 misDados.push(rollDice(), rollDice(), rollDice());
 CPUDados.push(rollDice(), rollDice(), rollDice());
@@ -154,10 +155,15 @@ if (usuarioPerdido) {
 if (CPUPerdido) {
     outro("\nHas ganado porque la CPU se ha pasado de 21.");
 }
-
 if (usuarioGanado) {
     outro("\nHas ganado. CPU ha perdido.");
 }
 if (CPUGanado) {
     outro("\nHas perdido.");
+}
+if (sumArray(CPUDados) === sumArray(misDados) && !continuarJugando && !continuarJugandoCPU && !usuarioGanado && !CPUGanado && !usuarioPerdido && !CPUPerdido) {
+    empate = true;
+}
+if (empate) {
+    outro("\nEs un empate.");
 }
